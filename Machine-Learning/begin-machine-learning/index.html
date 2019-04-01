@@ -106,7 +106,7 @@
 <h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
 <li>$ 0 \le R^2 \le 1 $ </li>
 </ul>
-<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.</p>
+<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.<br>$$ 1 - { mse \over mean(true) } $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rsq</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
 
 
