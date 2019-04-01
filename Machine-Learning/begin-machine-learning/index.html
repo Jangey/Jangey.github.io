@@ -89,10 +89,13 @@
 <li>(random_state): integer; if None, then results are random, otherwise fixed to a given seed.<br><br></li>
 </ul>
 <p>Machine Learning need split for <strong>Train Set</strong> and <strong>Test Set</strong>. We train the model from <strong>Train Set</strong> and use the model for unknowed <strong>Test Set</strong>.</p>
-<p><hr><br></p>
+<hr>
+
+
 <h3 id="MSE-Mean-Square-Error"><a href="#MSE-Mean-Square-Error" class="headerlink" title="MSE - Mean Square Error"></a>MSE - Mean Square Error</h3><ul>
 <li>Mean of the square difference between the predicted value and true value.</li>
 </ul>
+<p>$$ MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat y_i)^2 $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function mse		- return Mean-Squared Error</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mse</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> ((y_predicted - y_true)**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h3 id="RMSE-Root-Mean-Square-Error"><a href="#RMSE-Root-Mean-Square-Error" class="headerlink" title="RMSE - Root Mean Square Error"></a>RMSE - Root Mean Square Error</h3><ul>
@@ -103,8 +106,17 @@
 <h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
 <li>$ 0 \le R^2 \le 1 $ </li>
 </ul>
-<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.<br>$$ R^2 = 1 - { mse \over value } $$</p>
+<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.</p>
+<p>$$ R^2 = 1 - { mse \over value } $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rsq</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h3 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h3><p>Overfitting means our model fit the trainning set really well, maybe too well. $R^2$ train set way better than $R^2$ test set.</p>
+<p>e.g. Train Set $R^2 = 0.97$ , Test Set $R^2 = 0.64$.</p>
+<p>Solution: Reduce the complexity of our model from high frequency model to a lower degree polynomial model.<br><br></p>
+<h3 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h3><p>Underfitting mean low $R^2$ on both train set and test set. $R^2$ train set and $R^2$ test set are low.</p>
+<p>e.g. Train Set $R^2 = 0.64$, Test Set $R^2 = 0.62$.</p>
+<p>Solution: We can try more complex model from low degree polynomial model to a higher degree polynomial model.</p>
 
 
             <!-- Meta --> 
