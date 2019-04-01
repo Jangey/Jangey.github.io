@@ -66,12 +66,10 @@
         <!-- Body -->
         <!-- Page Header -->
 <header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <div class="post-heading">
-                    <h3><strong>Begin Machine Learning</strong></h3>
-                </div>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong>Begin Machine Learning</strong></h2>
             </div>
         </div>
     </div>
@@ -79,11 +77,10 @@
 
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Main Content -->
-            <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <p>Welcome to Machine Learning. Everything is imported from class lectures and backup for future study.<br><br></p>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <p>Welcome to Machine Learning. Everything is imported from class lectures and backup for future study.<br><br><br>第三个年头的年终总结了<br>上一篇我还22岁，现在已经23岁了<br>这一年回顾下来，其实都在感情里面打转</p>
 <h3 id="Train-Test-Split"><a href="#Train-Test-Split" class="headerlink" title="Train_Test_Split:"></a>Train_Test_Split:</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Input:</span> <span class="built_in">X</span>, <span class="built_in">y</span>, test_size, shuffle, random_state</span><br><span class="line"><span class="symbol">Output:</span> X_train, X_test, y_train, y_test</span><br></pre></td></tr></table></figure>
 <ul>
 <li>(X, y): features and the target variable.</li>
@@ -106,18 +103,15 @@
 <h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
 <li>$ 0 \le R^2 \le 1 $ </li>
 </ul>
-<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.<br>$$ 1 - { mse \over mean(true) } $$</p>
+<p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.<br>$$ R^2 = 1 - { mse \over value } $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rsq</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
 
 
-                <!-- Meta --> 
-                <div class="post-date">
-                    <hr>
-                    2019-03-30
-                </div>
-
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                2019-03-30
             </div>
-
         </div>
     </div>
 </article>
