@@ -103,10 +103,9 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rmse		- return Root Mean-Squared Error</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rmse</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.sqrt(((y_predicted - y_true)**<span class="number">2</span>).mean())</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - \$ R^2 \$"></a>RSQ - R Square Score - \$ R^2 \$</h3><ul>
-<li>$ 0 \le R^2 \le 1 $<br>$ haha new $<br>\$ haha \$<br>If R^2 score close to 1, it mean the model is close to perfect.</li>
+<h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
+<li>$ 0 \le R^2 \le 1 $<br>If R^2 score close to 1, it mean the model is close to perfect.<br>\( a ^2 = b^2 + c^2 \)<br>()<br>$$ 1 - { mse \over mean(true) } $$<br>$$ f_a = 1.05^2 $$<br>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are<br>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</li>
 </ul>
-<p>$$ 1 - { mse \over mean(true) } $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rsq</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
 
 
@@ -145,7 +144,7 @@
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
-            inlineMath: [ ["\\$","\\$"], ["\\(","\\)"] ],
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
             processEscapes: true
         }
