@@ -38,6 +38,8 @@ bottom: 0;
 width: 100%;
 border-top: 1px solid #eee;
 font-size: 1.2em;
+text-align: center;
+margin: 0;
 }
 
 a, a:visited, a:active, a:focus {
