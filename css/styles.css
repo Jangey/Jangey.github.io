@@ -54,6 +54,23 @@ a:hover {
 }
 
 /*====================================================
+    youtube display screen size
+====================================================*/
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*====================================================
     page title
 ====================================================*/
 .post-heading{
@@ -241,4 +258,19 @@ pre .coffeescript .title {
 pre .keyword,
 pre .javascript .function {
   color: #b294bb;
+}
+
+/*====================================================
+    blockquote
+====================================================*/
+blockquote {
+  font-size: 16px;
+  width: 100%;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  border:3px dashed #c1c1c1;
+  background:#fff;
 }
