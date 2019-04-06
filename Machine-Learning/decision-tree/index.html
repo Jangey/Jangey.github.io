@@ -97,16 +97,18 @@
 </li>
 </ul>
 <h4 id="Graphic-Example"><a href="#Graphic-Example" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><p><img src="/Machine-Learning/decision-tree/DecisionTreeClassifier.png" width="100%"></p>
-<p><hr><br></p>
+<p><br><hr></p>
 <h3 id="Decision-Tree-Classification"><a href="#Decision-Tree-Classification" class="headerlink" title="Decision Tree Classification"></a>Decision Tree Classification</h3><p>Using features data from DataFrame to train a regression tree model. The way to find the best split value is to find the best average subtree of <strong>GINI Impurity X Data Weight</strong> in each feature type. When we found the <strong>BEST (GINI Impurity X Data Weight)</strong> value, the model will set it as the split value for current level. Separate the X and y into left subtree and right subtree, and keep going to train the model tree from subtree.</p>
 <p>More Info Using Scikit-Learn Built-in library. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html" target="_blank" rel="noopener">Scikit-Learn Decision Tree Regression</a> </p>
 <ul>
-<li><p>GINI Impurity:<br>$$ GINI =1-\sum_{i=1}^{N}{p_{i}}^{2} $$</p>
+<li>GINI Impurity:<br>$$ GINI =1-\sum_{i=1}^{N}{p_{i}}^{2} $$</li>
+</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_gini</span><span class="params">(y, valueType)</span>:</span></span><br><span class="line">    subvalue = [<span class="number">0</span>] * len(valueType)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> y:</span><br><span class="line">        <span class="keyword">if</span> i == valueType[i]:</span><br><span class="line">            subvalue[i] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    giniSum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> subvalue:</span><br><span class="line">        giniSum += (i/sum(subvalue)) ** <span class="number">2</span></span><br><span class="line">    subgini = <span class="number">1</span>-giniSum</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> subgini</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Data Weight:<br>$$ Data Weight = {\sum_{i=1}^{N}{SubtreeNode}\over{TotalNode}} $$</p>
+<ul>
+<li>Data Weight:<br>$$ Data Weight = {\sum_{i=1}^{N}{SubtreeNode}\over{TotalNode}} $$</li>
+</ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> left.any() <span class="keyword">and</span> right.any():</span><br><span class="line">	cur_giniWeight = self.calc_gini(y[left], self.valueType) * (len(y[left]) / len(y)) \</span><br><span class="line">	+ self.calc_gini(y[right], self.valueType) * (len(y[right])/len(y))</span><br></pre></td></tr></table></figure>
-</li>
+<ul>
 <li><p>max_depth: int or None, optional (default=None)<br>The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.</p>
 </li>
 <li><p>min_samples_leaf: int, float, optional (default=1)<br>The minimum number of samples required to be at a leaf node.</p>
