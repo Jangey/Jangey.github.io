@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!-- Mobile Devide view -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Title -->
+    
+    <title>Random Forest | Jangey Lu</title>
+
+    <!-- Pure CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+   <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+ </head>
+
+  <!-- Body tag -->
+  <body>
+      <div class="container-fluid navbar-container m-sm-5">
+
+        <!-- Header -->
+        <nav class="navbar navbar-toggleable-sm title navbar-light px-1 py-1 my-3 mb-sm-3">
+    <a class="navbar-brand ml-2" href="/">Jangey Lu</a>
+
+    <button class="navbar-toggler navbar-toggler-right py-3" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto my-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/photography">Photography</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/videography">Videography</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+            </li>
+            
+        </ul>
+        <hr class="hidden-md-up">
+    </div>
+</nav>
+
+        
+        <!-- Body -->
+        <!-- Page Header -->
+<header class="intro-header">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong>Random Forest</strong></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <h3 id="Random-Forest-Regression"><a href="#Random-Forest-Regression" class="headerlink" title="Random Forest Regression"></a>Random Forest Regression</h3><p>Random Forest Regression is basic on <a href="../decision-tree/">Decision Tree Regression</a>. It will build ‘n_estimators’ of Decision Tree Regression, and using the average each decision tree predict value to improve the accuracy value, and control over-fitting. </p>
+<p>More Info Using Scikit-Learn Built-in library: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html" target="_blank" rel="noopener">Scikit-Learn Random Forest Regression</a></p>
+<ul>
+<li><p>n_estimators : integer, optional (default=10)<br>The number of trees in the forest.</p>
+</li>
+<li><p>sample_ratio: percentage of total size<br>For some big dataset, it may take long time to build for random forest, therefore we can take some sample of the data to same time for build the random forest.</p>
+</li>
+</ul>
+<h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><ul>
+<li><p>fit(self, X: pd.DataFrame, y: np.array)<br>Build a forest of trees from the training set (X, y).</p>
+</li>
+<li><p>predict(self, X: pd.DataFrame)<br>Predict regression target for X.</p>
+</li>
+<li><p>score(self, X: pd.DataFrame, y: np.array)<br>Returns the coefficient of determination $R^2$ of the prediction.</p>
+</li>
+</ul>
+<h4 id="Graphic-Example"><a href="#Graphic-Example" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><ul>
+<li>X-axis: Number of Random Forest estimators</li>
+<li>y-axis: The accuracy for predict values.</li>
+</ul>
+<p><img src="/Machine-Learning/random-forest/RandomForestRegressor.png" width="100%"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomForestRegressor</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n_estimators, sample_ratio, random_state=None)</span>:</span></span><br><span class="line">		self.n_estimators = n_estimators</span><br><span class="line">		self.sample_ratio = sample_ratio</span><br><span class="line">		self.random_state = random_state</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, X: pd.DataFrame, y: np.array)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> self.random_state!=<span class="literal">None</span>:</span><br><span class="line">			np.random.seed(self.random_state)</span><br><span class="line"></span><br><span class="line">		n=self.n_estimators</span><br><span class="line">		n_sample = X.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">		self.trees = []</span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">			tree = DecisionTreeRegressor()</span><br><span class="line">			indices = np.random.randint(<span class="number">0</span>, n_sample, int(self.sample_ratio*n_sample))</span><br><span class="line">			_ = tree.fit(X.iloc[indices, :], y[indices])</span><br><span class="line">			self.trees.append(tree)</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X: pd.DataFrame)</span>:</span></span><br><span class="line">		predictList = []</span><br><span class="line">		<span class="keyword">for</span> t <span class="keyword">in</span> self.trees:</span><br><span class="line">			predictList.append(t.predict(X))</span><br><span class="line">		predictList = np.array(predictList)</span><br><span class="line">		predictSampled = predictList.mean(axis=<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> predictSampled</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self, X: pd.DataFrame, y: np.array)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> metrics.rsq(self.predict(X), y)</span><br></pre></td></tr></table></figure>
+
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                2019-04-14
+            </div>
+        </div>
+    </div>
+</article>
+
+      </div>
+
+      <!-- footer scripts -->
+      <footer class="mt-4 py-4 mr-4 footer">
+    
+    <a href="https://facebook.lujangey.com" target="_blank"><i class="fa fa-facebook"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://instagram.lujangey.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://github.lujangey.com" target="_blank"><i class="fa fa-github"></i></a>
+    <i class="mr-4"></i>
+    <a href="/images/wechatID.JPG" target="_blank"><i class="fa fa-weixin"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://youtube.lujangey.com" target="_blank"><i class="fa fa-youtube"></i></a>
+    <i class="mr-4"></i>
+    <a href="mailto:lujangey@lujangey.com" target="_blank"><i class="fa fa-envelope"></i></a>
+    
+</footer>
+
+      <!-- After footer scripts -->
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+
+</html>
