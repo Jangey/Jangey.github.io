@@ -9,7 +9,7 @@
 
     <!-- Title -->
     
-    <title>Archives | Jangey Lu</title>
+    <title>Logistic Regression | Jangey Lu</title>
 
     <!-- Pure CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -63,96 +63,48 @@
 
         
         <!-- Body -->
-        
-
-
-<!-- Page Header -->
-<header>
-    <div class="container">
-        <div class="site-heading">
-            <h1>Archives</h1>
+        <!-- Page Header -->
+<header class="intro-header">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong>Logistic Regression</strong></h2>
+            </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<section class="intro">
-    <div class="container">
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/logistic-regression/">
-        <h3 class="post-title">
-            Logistic Regression
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/linear-regression/">
-        <h3 class="post-title">
-            Linear Regression
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Life/notre-dame-cathedral/">
-        <h3 class="post-title">
-            Notre Dame Cathedral
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/neural-network/">
-        <h3 class="post-title">
-            Neural Network
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/random-forest/">
-        <h3 class="post-title">
-            Random Forest
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/decision-tree/">
-        <h3 class="post-title">
-            Decision Tree
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Life/old-melody/">
-        <h3 class="post-title">
-            旧歌
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Uncategorized/untitle/">
-        <h3 class="post-title">
-            Untitle
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/begin-machine-learning/">
-        <h3 class="post-title">
-            Begin Machine Learning
-        </h3>
-    </a>
-</div>
-        
+<!-- Post Content -->
+<article>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <h4 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h4><p>0, if $\sum w_i x_i \le 0$. For example: $\sigma(-10) = 0$<br>1, if $\sum w_i x_i \gt 0$. For example: $\sigma(10) = 1$<br>$$\sigma(z) = \frac{1}{1+e^{-z}} $$</p>
+<center><img src="/Machine-Learning/logistic-regression/SigmoidFunction.png" width="50%"></center>
+
+<h4 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h4><p>L(a,b) find a, b. And minimise the loss function.</p>
+<p>$$ L(a,b) = -y_i log h_i - (1-y_i) log(h-h_i)  $$</p>
+<p>If $y_i = 0$, then  $L = -1-log(1-h_i) $<br>If $y_i = 1$, then  $L = -log h_i $</p>
+<h3 id="One-dimensional-Case"><a href="#One-dimensional-Case" class="headerlink" title="One dimensional Case"></a>One dimensional Case</h3><p>Passing the linear regression with sigma $(\sigma)$ function will be logistic regression.<br>$$ h = \sigma (ax+b) $$</p>
+<p>a = $ a - \frac{\partial L}{\partial a} * \alpha $</p>
+<p>b = $ b - \frac{\partial L}{\partial b} * \alpha $</p>
+<p>$$ \frac{\partial L}{\partial a} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) * x_i $$</p>
+<p>$$ \frac{\partial L}{\partial b} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) $$</p>
+<h3 id="Multi-Dimensional-Case"><a href="#Multi-Dimensional-Case" class="headerlink" title="Multi-Dimensional Case"></a>Multi-Dimensional Case</h3><p>$$ h = \sigma (\sum_{i=1}^N (w_i * x_i) + b) $$</p>
+<h4 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h4><p>Logistic will not need apply normal distribution for out range value. </p>
+<p>For more info about using <a href="../linear-regression/#Normal-Distribution">Normal Distribution</a>.</p>
+<h4 id="Batch"><a href="#Batch" class="headerlink" title="Batch"></a>Batch</h4><p>The way of Logistic Regression using <strong>Batch</strong> is same way as Linear Regression to use <strong>Batch</strong>.</p>
+<p>For more info about using <a href="../linear-regression/#Batch">Batch</a></p>
+
+
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                2019-04-29
+            </div>
+        </div>
     </div>
-</section>
+</article>
 
       </div>
 
