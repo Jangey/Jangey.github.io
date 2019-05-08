@@ -82,19 +82,38 @@
             <h4 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function"></a>Sigmoid Function</h4><p>0, if $\sum w_i x_i \le 0$. For example: $\sigma(-10) = 0$<br>1, if $\sum w_i x_i \gt 0$. For example: $\sigma(10) = 1$<br>$$\sigma(z) = \frac{1}{1+e^{-z}} $$</p>
 <center><img src="/Machine-Learning/logistic-regression/SigmoidFunction.png" width="50%"></center>
 
+<hr>
+
 <h4 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h4><p>L(a,b) find a, b. And minimise the loss function.</p>
 <p>$$ L(a,b) = -y_i log h_i - (1-y_i) log(h-h_i)  $$</p>
 <p>If $y_i = 0$, then  $L = -1-log(1-h_i) $<br>If $y_i = 1$, then  $L = -log h_i $</p>
-<h3 id="One-dimensional-Case"><a href="#One-dimensional-Case" class="headerlink" title="One dimensional Case"></a>One dimensional Case</h3><p>Passing the linear regression with sigma $(\sigma)$ function will be logistic regression.<br>$$ h = \sigma (ax+b) $$</p>
+<hr>
+
+<h4 id="One-dimensional-Case"><a href="#One-dimensional-Case" class="headerlink" title="One dimensional Case"></a>One dimensional Case</h4><p>Passing the linear regression with sigma $(\sigma)$ function will be logistic regression.<br>$$ h = \sigma (ax+b) $$</p>
 <p>a = $ a - \frac{\partial L}{\partial a} * \alpha $</p>
 <p>b = $ b - \frac{\partial L}{\partial b} * \alpha $</p>
 <p>$$ \frac{\partial L}{\partial a} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) * x_i $$</p>
 <p>$$ \frac{\partial L}{\partial b} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) $$</p>
-<h3 id="Multi-Dimensional-Case"><a href="#Multi-Dimensional-Case" class="headerlink" title="Multi-Dimensional Case"></a>Multi-Dimensional Case</h3><p>$$ h = \sigma (\sum_{i=1}^N (w_i * x_i) + b) $$</p>
+<hr>
+
+<h4 id="Multi-Dimensional-Case"><a href="#Multi-Dimensional-Case" class="headerlink" title="Multi-Dimensional Case"></a>Multi-Dimensional Case</h4><p>$$ h = \sigma (\sum_{i=1}^N (w_i * x_i) + b) $$</p>
+<hr>
+
 <h4 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h4><p>Logistic will not need apply normal distribution for out range value. </p>
 <p>For more info about using <a href="../linear-regression/#Normal-Distribution">Normal Distribution</a>.</p>
+<hr>
+
 <h4 id="Batch"><a href="#Batch" class="headerlink" title="Batch"></a>Batch</h4><p>The way of Logistic Regression using <strong>Batch</strong> is same way as Linear Regression to use <strong>Batch</strong>.</p>
 <p>For more info about using <a href="../linear-regression/#Batch">Batch</a></p>
+<hr>
+
+<h4 id="Sigmoid-Derivative"><a href="#Sigmoid-Derivative" class="headerlink" title="Sigmoid Derivative"></a>Sigmoid Derivative</h4><p>$$ \frac{d}{dx}\sigma(x) = \sigma(x) * (1 - \sigma(x)) $$</p>
+<center><img src="/Machine-Learning/logistic-regression/SigmoidDerivative.png" width="50%"></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sigmoid(x) * (<span class="number">1</span> - sigmoid(x))</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h4 id="Precision-amp-Recall"><a href="#Precision-amp-Recall" class="headerlink" title="Precision &amp; Recall"></a>Precision &amp; Recall</h4><p>Precision = True positive / No. of predicted positive<br>Recall = True positive / No. of actual positive<br>F1_score = $2\frac{PR}{P+R}$</p>
 
 
             <!-- Meta --> 
