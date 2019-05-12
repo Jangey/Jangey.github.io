@@ -9,7 +9,7 @@
 
     <!-- Title -->
     
-    <title>archive_b | Jangey Lu</title>
+    <title>Backpropagation | Jangey Lu</title>
 
     <!-- Pure CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -63,104 +63,45 @@
 
         
         <!-- Body -->
-        
-
-
-<!-- Page Header -->
-<header>
-    <div class="container">
-        <div class="site-heading">
-            <h1>2019</h1>
+        <!-- Page Header -->
+<header class="intro-header">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong>Backpropagation</strong></h2>
+            </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<section class="intro">
-    <div class="container">
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/backpropagation/">
-        <h3 class="post-title">
-            Backpropagation
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/logistic-regression/">
-        <h3 class="post-title">
-            Logistic Regression
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/linear-regression/">
-        <h3 class="post-title">
-            Linear Regression
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Life/notre-dame-cathedral/">
-        <h3 class="post-title">
-            Notre Dame Cathedral
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/neural-network/">
-        <h3 class="post-title">
-            Neural Network
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/random-forest/">
-        <h3 class="post-title">
-            Random Forest
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/decision-tree/">
-        <h3 class="post-title">
-            Decision Tree
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Life/old-melody/">
-        <h3 class="post-title">
-            旧歌
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Uncategorized/untitle/">
-        <h3 class="post-title">
-            Untitle
-        </h3>
-    </a>
-</div>
-        
-            <div class="post-preview">
-    <a href="/Machine-Learning/begin-machine-learning/">
-        <h3 class="post-title">
-            Begin Machine Learning
-        </h3>
-    </a>
-</div>
-        
+<!-- Post Content -->
+<article>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <h4 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h4><p>We use binary log loss (<strong>cross entropy</strong>).<br>$$ Loss = \frac{1}{N} \sum_{i=1}^N -{(y_i\log(p_i) + (1 - y_i)\log(1 - p_i))} $$<br>Remember: Here the <strong>log</strong> is natual-log ($ln$), because the exponential $e$ should match $ln$.</p>
+<hr>
+
+<h4 id="Forward"><a href="#Forward" class="headerlink" title="Forward"></a>Forward</h4><p>From the <strong>Neural Network</strong>, We using forward function to find the predict value and <strong>Loss</strong> value.</p>
+<p>Predict Value: The value we using the input and weight to calculate the predict for output.</p>
+<p>Loss Value: We using the <strong>Predict Value</strong> and the <strong>Actual Value</strong> into Loss Function to get the Loss Value for current prediction.</p>
+<hr>
+
+<h4 id="Backward"><a href="#Backward" class="headerlink" title="Backward"></a>Backward</h4><p>We using the <strong>Neural Network</strong>, start from the <strong>Loss</strong> value backward, and use Derivative for each <strong>Gate</strong> go back to change the value on each weight.</p>
+<p>$$ \frac{\partial y}{\partial x} = \frac{\partial y}{\partial y} \cdot \frac{\partial y}{\partial f} \cdot \frac{\partial f}{\partial g} \cdot \frac{\partial g}{\partial x}$$ </p>
+<hr>
+
+<h4 id="Code-Example"><a href="#Code-Example" class="headerlink" title="Code Example"></a>Code Example</h4><p>The input value is <strong>Variable</strong>, the weight value and learning rate we put into <strong>Parameter</strong>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># y = a * x1 + b</span></span><br><span class="line"><span class="comment"># y = (a * x1 + b - y1)^2</span></span><br><span class="line"><span class="comment"># learning_rate = 0.1, a=0, b=0</span></span><br><span class="line"></span><br><span class="line">x1 = graph.Variable(<span class="number">0.5</span>)</span><br><span class="line">y1 = graph.Variable(<span class="number">1.7</span>)</span><br><span class="line">a = graph.Parameter(<span class="number">0</span>, <span class="number">0.1</span>)</span><br><span class="line">b = graph.Parameter(<span class="number">0</span>, <span class="number">0.1</span>)</span><br><span class="line">print(a.value, b.value)</span><br><span class="line"></span><br><span class="line">loss = graph.Add(</span><br><span class="line">        graph.Add(graph.Mul(x1, a), b),</span><br><span class="line">        graph.Mul(y1, graph.Variable(<span class="number">-1</span>)))</span><br><span class="line"></span><br><span class="line">loss.forward() <span class="comment"># -&gt; your curretn loss</span></span><br><span class="line">loss.backward(<span class="number">1</span>) <span class="comment"># -&gt; cal backward to change weight, inital the '1' for input dy/dy</span></span><br></pre></td></tr></table></figure>
+
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                2019-05-11
+            </div>
+        </div>
     </div>
-</section>
+</article>
 
       </div>
 
