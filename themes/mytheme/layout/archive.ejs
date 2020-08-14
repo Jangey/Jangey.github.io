@@ -1,0 +1,28 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = "#" + page.tag;
+    if (page.archive) {
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('Archives');
+    }
+%>
+
+
+<!-- Page Header -->
+<header>
+    <div class="container">
+        <div class="site-heading">
+            <h1><%- title %></h1>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<section class="intro">
+    <div class="container">
+        <% page.posts.each(function(item){ %>
+            <%- partial('_partial/article-index', {item: item}) %>
+        <% }); %>
+    </div>
+</section>

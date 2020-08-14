@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!-- Mobile Devide view -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Title -->
+    
+    <title>Linear Regression | Jangey Lu</title>
+
+    <!-- Pure CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+   <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+ </head>
+
+  <!-- Body tag -->
+  <body>
+      <div class="container-fluid navbar-container m-sm-5">
+
+        <!-- Header -->
+        <nav class="navbar navbar-toggleable-sm title navbar-light px-1 py-1 my-3 mb-sm-3">
+    <a class="navbar-brand ml-2" href="/">Jangey Lu</a>
+
+    <button class="navbar-toggler navbar-toggler-right py-3" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto my-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/photography">Photography</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/videography">Videography</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">Categories</a>
+            </li>
+            
+        </ul>
+        <hr class="hidden-md-up">
+    </div>
+</nav>
+
+        
+        <!-- Body -->
+        <!-- Page Header -->
+<header class="intro-header">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong>Linear Regression</strong></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <h3 id="One-dimensional-Case"><a href="#One-dimensional-Case" class="headerlink" title="One dimensional Case"></a>One dimensional Case</h3><p>h is the output for prediction if give x-value, and y is output, h is predict value</p>
+<p>$$ h=ax+b $$</p>
+<h4 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h4><p>$$ Loss = L(a, b) $$</p>
+<p>The goal is to minize the loss function, the value a and b define the predict function. When the function achive the lowest value will be a good loss function.</p>
+<p>$$ Loss = MSE = \frac{1}{N} \sum_{i=1}^N (y_i - h_i)^2 $$</p>
+<p>Start from a = 0, b = 0, then update at each iteration. Using derivative to find which direction we need to change. $ \frac{\partial L}{\partial a} = 0$ and $ \frac{\partial L}{\partial b} = 0 $</p>
+<p>Therefore, from Loss function we can get:<br>$$ L(a, b)= \frac{1}{N} \sum_{i=1}^N (y_i - a x_i - b)^2 $$</p>
+<p>Giving learning rate: $ \alpha $ = learning rate </p>
+<p>$$ \frac{\partial L}{\partial a} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) * x_i $$</p>
+<p>$$ \frac{\partial L}{\partial b} = \frac{1}{N} \sum_{i=1}^N (h_i - y_i) $$</p>
+<p>For a and b updating :</p>
+<p>a = $ a - \frac{\partial L}{\partial a} * \alpha $</p>
+<p>b = $ b - \frac{\partial L}{\partial b} * \alpha $</p>
+<p>After all, when we find the minimum value for Loss function, then it will be the a &amp; b for the linear regression.</p>
+<h4 id="Excel-Example"><a href="#Excel-Example" class="headerlink" title="Excel Example"></a>Excel Example</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">x</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">y_pred</th>
+<th style="text-align:center">y_pred - y</th>
+<th style="text-align:center">(y_pred-y) * x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[0]</td>
+<td style="text-align:center">[2.3]</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-2.3</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">[1.11]</td>
+<td style="text-align:center">[2.7]</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-2.7</td>
+<td style="text-align:center">-2.997</td>
+</tr>
+<tr>
+<td style="text-align:center">[2.8]</td>
+<td style="text-align:center">[7.1]</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-7.1</td>
+<td style="text-align:center">-19.88</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Average</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">-4.0333</td>
+<td style="text-align:center">-7.62567</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Initial</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>a</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0 - (0.1 * -7.62567)</td>
+<td style="text-align:center">a - [LR x Average((y_pred-y) * x)]</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>b</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0 - (0.1 * -4.0333)</td>
+<td style="text-align:center">b - [LR x Average((y_pred_y)]</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Learning rate (LR)</strong></td>
+<td style="text-align:center">0.1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Projected</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">$\sqrt{(0)^2 + (0)^2}$</td>
+<td style="text-align:center">$\sqrt{(a)^2 + (b)^2}$</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Loss</strong></td>
+<td style="text-align:center">62.99</td>
+<td style="text-align:center">$\frac{(-2.3)^2 + (-2.7)^2 + (-7.1)^2}{3} $</td>
+<td style="text-align:center">$\frac{1}{N}\sum_{i=1}^N (y\_pred -y)^2$</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h3 id="Multi-Dimensional-Case"><a href="#Multi-Dimensional-Case" class="headerlink" title="Multi-Dimensional Case"></a>Multi-Dimensional Case</h3><p>In multi-dimensional case, the a will be replace by $w_i$, and the formular is same as the one dimensional case.</p>
+<p>$$ h = \sum_{i=1}^N (w_i * x_i) + b $$</p>
+<h4 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h4><p>Input <strong>X</strong> change to <strong>X_norm</strong><br>Input <strong>Y</strong> change to <strong>y_norm</strong></p>
+<p>For each feature of X input, We have to calculate <strong>mean</strong> and <strong>STD</strong> (Standard Deviation). And Using those two value to get <strong>X_norm</strong> and <strong>y_norm</strong>.</p>
+<p>From real value change to normal distribution:</p>
+<p>$$ X\_NORM = \frac{(X - \overline X)}{STD} $$<br>$$ y\_NORM = \frac{(y - \overline y)}{STD} $$</p>
+<p>Becuase we using normal distribution to get <strong>weight</strong> therefore, when we get back y predict value we need using <strong>mean</strong> and <strong>STD</strong> to change back real value:</p>
+<p>$$ y = y\_Predict \cdot y\_STD + \overline y $$</p>
+<h4 id="Batch"><a href="#Batch" class="headerlink" title="Batch"></a>Batch</h4><p>With batch <strong>stochastic gradient descent</strong>, we’d need fewer iterations and improve the <strong>LOSS</strong> value faster. </p>
+<p>Think of iteration as epoch - you pass over the entire dataset. So if you split into batches, you’d go over all batches and this will be one iteration.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">batch_size = <span class="number">4</span></span><br><span class="line">batches = int( X.shape[<span class="number">0</span>] / self.batch_size )</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(batches):</span><br><span class="line">	start = i * batch_size</span><br><span class="line">	end = start + batch_size</span><br><span class="line">	X = X[start:end]</span><br><span class="line">	y = y[start:end]</span><br></pre></td></tr></table></figure>
+
+
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                2019-04-23
+            </div>
+        </div>
+    </div>
+</article>
+
+      </div>
+
+      <!-- footer scripts -->
+      <footer class="mt-4 py-4 mr-4 footer">
+    
+    <a href="https://facebook.lujangey.com" target="_blank"><i class="fa fa-facebook"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://instagram.lujangey.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://github.lujangey.com" target="_blank"><i class="fa fa-github"></i></a>
+    <i class="mr-4"></i>
+    <a href="/images/wechatID.JPG" target="_blank"><i class="fa fa-weixin"></i></a>
+    <i class="mr-4"></i>
+    <a href="https://youtube.lujangey.com" target="_blank"><i class="fa fa-youtube"></i></a>
+    <i class="mr-4"></i>
+    <a href="mailto:lujangey@lujangey.com" target="_blank"><i class="fa fa-envelope"></i></a>
+    
+</footer>
+
+      <!-- After footer scripts -->
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+
+</html>

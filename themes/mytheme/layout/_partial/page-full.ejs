@@ -1,0 +1,8 @@
+<article>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <h1 class="site-heading <% if (page.category){ %> category<% } else if (page.category){ %> category<% } %>"><%- item.title || theme.default_post_title || "Untitled" %></h1>
+            <%- item.content %>
+        </div>
+    </div>
+</article>

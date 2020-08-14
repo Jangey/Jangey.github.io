@@ -1,0 +1,324 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* font-family: 'EB Garamond', serif; */
+  font-family: 'Times New Roman', serif;
+  font-size: 1.1rem;
+	color: #333;
+  margin-bottom: 120px; /* Margin bottom by footer height */
+}
+
+.navbar-brand {
+  font-family: 'Great Vibes', cursive;
+	color: #000;
+	font-size: 2.5rem;
+  letter-spacing: 2.5px;
+}
+
+.nav-item {
+	font-size: 1.0rem;
+	font-weight: 500;
+	letter-spacing: 2.5px;
+}
+
+.navbar-toggler {
+	border: 0;
+}
+
+.navbar-toggler-right {
+	right: 0rem;
+}
+
+.footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+border-top: 1px solid #eee;
+font-size: 1.2em;
+text-align: center;
+margin: 0;
+}
+
+a, a:visited, a:active, a:focus {
+	color: #000;
+	background-color: transparent;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: rgb(138, 138, 138);
+}
+
+/*====================================================
+    youtube display screen size
+====================================================*/
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*====================================================
+    page title
+====================================================*/
+.post-heading{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.site-heading {
+	text-align: center;
+  color: #babbba;
+	margin-bottom: 20px;
+}
+
+.post-title {
+  text-align: center;
+  height: 100%;
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.post-content a {
+    color:darkgrey;
+    text-decoration: underline;
+
+    background-color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.post-content a:hover {
+  color: gray
+}
+
+.post-date {
+  text-align: right;
+  font-size: 1em;
+  margin: 1px;
+}
+
+/*====================================================
+    highlight
+====================================================*/
+pre,
+.highlight {
+  overflow: auto;
+  margin: 20px 0;
+  padding: 0;
+  color: #c5c8c6;
+  font-size: 10px;
+  background: #1d1f21;
+  line-height: 1.4;
+}
+code {
+  padding: 2px 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #666666;
+  background: #eee;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  color: #c5c8c6;
+  background: none;
+  text-shadow: none;
+}
+pre .meta {
+  color: #b294bb;
+}
+pre .comment {
+  color: #969896;
+}
+.highlight {
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+.highlight pre {
+  border: none;
+  margin: 0;
+  padding: 10px 0;
+}
+.highlight table {
+  margin: 0;
+  width: auto;
+  border: none;
+}
+.highlight td {
+  border: none;
+  padding: 0;
+}
+.highlight figcaption {
+  font-size: 1em;
+  color: #c5c8c6;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+.highlight figcaption a {
+  float: right;
+  color: #c5c8c6;
+}
+.highlight figcaption a:hover {
+  border-bottom-color: #c5c8c6;
+}
+.highlight .gutter pre {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #888f96;
+  text-align: right;
+  background-color: #000;
+}
+.highlight .code pre {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #1d1f21;
+}
+.highlight .line {
+  height: 20px;
+}
+.gutter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.gist table {
+  width: auto;
+}
+.gist table td {
+  border: none;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #c66;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant,
+pre .command {
+  color: #de935f;
+}
+pre .ruby .class .title,
+pre .css .rules .attribute,
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata,
+pre .special,
+pre .number,
+pre .formula {
+  color: #b5bd68;
+}
+pre .title,
+pre .css .hexcolor {
+  color: #8abeb7;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #81a2be;
+}
+pre .keyword,
+pre .javascript .function {
+  color: #b294bb;
+}
+
+/*====================================================
+    blockquote
+====================================================*/
+blockquote {
+  font-size: 16px;
+  width: 100%;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  border:3px dashed #c1c1c1;
+  background:#fff;
+}
+
+
+/*====================================================
+    table
+====================================================*/
+/* 基本样式 */
+table {
+  width: 100%; /*表格宽度*/
+  max-width: 50em; /*表格最大宽度，避免表格过宽*/
+  border: 1px solid #dedede; /*表格外边框设置*/
+  margin: 15px auto; /*外边距*/
+  border-collapse: collapse; /*使用单一线条的边框*/
+  empty-cells: show; /*单元格无内容依旧绘制边框*/
+  overflow: auto;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+table th,
+
+table td {
+height: 25px; /*统一每一行的默认高度*/
+border: 1px solid #dedede; /*内部边框样式*/
+padding: 0 10px; /*内边距*/
+}
+
+/* 表头样式 */
+table th {
+  font-weight: bold; /*加粗*/
+  text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  background: rgba(32, 32, 32, 0.2); /*背景色*/
+}
+
+/* 隔行变色 */
+table tbody tr:nth-child(2n) {
+  background: rgba(131, 132, 133, 0.12); 
+}
+
+/* 表头不换行 */
+table th {
+  white-space: nowrap; /*表头内容强制在一行显示*/
+}
+
+/* 首列不换行 */
+table td:nth-child(1) {
+  white-space: nowrap; 
+}

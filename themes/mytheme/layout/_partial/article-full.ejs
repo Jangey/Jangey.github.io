@@ -1,0 +1,26 @@
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="post-heading">
+                <h2><strong><%- item.title || theme.default_post_title || "Untitled" %></strong></h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="row">
+        <!-- Post Main Content -->
+        <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <%- item.content %>
+
+            <!-- Meta --> 
+            <div class="post-date">
+                <hr>
+                <%- item.date.format(theme.date_format) %>
+            </div>
+        </div>
+    </div>
+</article>

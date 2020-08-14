@@ -1,0 +1,20 @@
+<article>
+  <h1 class="site-heading <% if (page.category){ %> category<% } else if (page.category){ %> category<% } %>"><%= page.title || config.title %></h1>
+
+  <div class="archive">
+    <% site.categories.sort('name').map(function(category){  %>
+    <div class="container">
+      <h3 class="post-title">
+        <i class="icon-categories"></i>
+          <a href="<%= url_for(category.path) %>" title="<%= category.name %>" rel="<%= category.length %>"><%= category.name %></a>
+      </h3>
+      <% category.posts.sort('-date').map(function(item){  %>
+        <div class="<%= item.layout %> archive">
+
+        </div>
+      <% }) %>
+    </div>
+    <% }) %>
+  </div>
+</article>
+      
