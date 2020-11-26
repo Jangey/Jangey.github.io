@@ -2,6 +2,9 @@
 title: Videography
 date: 2019-04-01 22:42:35
 ---
+<center> <h3>All the Way North</h3> </center>
+<div class="video-container"><iframe src="//www.youtube.com/embed/iZ0Ka5Sys6E" frameborder="0" allowfullscreen class="video"></iframe></div>
+<hr><br>
 <center> <h3>Kayak</h3> </center>
 <div class="video-container"><iframe src="//www.youtube.com/embed/yPSufihBO-s" frameborder="0" allowfullscreen class="video"></iframe></div>
 <hr><br>
