@@ -80,6 +80,6 @@ theme: mytheme
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Jangey/Jangey.github.io
+  repo: git@github.com:Jangey/Jangey.github.io.git
   branch: main
   message:  
