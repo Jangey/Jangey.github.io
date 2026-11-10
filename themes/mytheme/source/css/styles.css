@@ -56,17 +56,21 @@ a:hover {
 /*====================================================
     vertically centered pages (home, about)
 ====================================================*/
-/* Fill the viewport above the 120px reserved for the footer */
+/* Fill the viewport down to the footer's top edge. The footer is ~81px tall but body
+   reserves 120px for it, so the negative margin gives back the 39px difference.
+   svh is the visible height on iOS Safari; vh there includes the area behind the toolbar. */
 .center-page {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 81px);
+  min-height: calc(100svh - 81px);
+  margin-bottom: -39px !important;
 }
 
 @media (min-width: 576px) {
   .center-page {
-    min-height: calc(100vh - 120px - 3rem);
-    margin-bottom: 0 !important;
+    min-height: calc(100vh - 81px - 3rem);
+    min-height: calc(100svh - 81px - 3rem);
   }
 
   /* Flex children don't collapse margins; keep the header where it was */
@@ -95,6 +99,21 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Center the motto between the visible header and footer */
+.center-page:has(.motto) > nav {
+  margin-bottom: 0 !important;
+}
+
+/* Shrink on narrow screens so each sentence stays on one line */
+.motto {
+  font-size: min(2.5rem, 6.2vw);
+  margin: 0;
+}
+
+.motto > p:last-child {
+  margin-bottom: 0;
 }
 
 /*====================================================

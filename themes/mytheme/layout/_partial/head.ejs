@@ -20,15 +20,15 @@
     <title><%= title.join(' | ') %></title>
 
     <!-- Favicon -->
-    <link rel="icon" href="<%- url_for('/favicon.ico') %>" sizes="32x32">
-    <link rel="icon" href="<%- url_for('/favicon.svg') %>" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="<%- url_for('/apple-touch-icon.png') %>">
+    <link rel="icon" href="<%- asset_version('favicon.ico') %>" sizes="32x32">
+    <link rel="icon" href="<%- asset_version('favicon.svg') %>" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<%- asset_version('apple-touch-icon.png') %>">
 
     <!-- Pure CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
    <!-- Custom CSS -->
-    <%- css('css/styles.css') %>
+    <link rel="stylesheet" href="<%- asset_version('css/styles.css') %>">
 
  </head>
