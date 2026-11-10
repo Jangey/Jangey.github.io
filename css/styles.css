@@ -54,6 +54,50 @@ a:hover {
 }
 
 /*====================================================
+    vertically centered pages (home, about)
+====================================================*/
+/* Fill the viewport above the 120px reserved for the footer */
+.center-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+}
+
+@media (min-width: 576px) {
+  .center-page {
+    min-height: calc(100vh - 120px - 3rem);
+    margin-bottom: 0 !important;
+  }
+
+  /* Flex children don't collapse margins; keep the header where it was */
+  .center-page > nav {
+    margin-top: 0 !important;
+  }
+}
+
+.center-page > :last-child,
+.center-page > :last-child > .row {
+  flex: 1;
+  display: flex;
+}
+
+.center-page > :last-child,
+.center-page > :last-child > .row > div {
+  flex-direction: column;
+}
+
+.center-page > :last-child > .row > div {
+  display: flex;
+}
+
+.center-page center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*====================================================
     youtube display screen size
 ====================================================*/
 .video-container {
@@ -118,7 +162,7 @@ pre,
   margin: 20px 0;
   padding: 0;
   color: #c5c8c6;
-  font-size: 10px;
+  font-size: 14px;
   background: #1d1f21;
   line-height: 1.4;
 }
@@ -321,4 +365,83 @@ table th {
 /* 首列不换行 */
 table td:nth-child(1) {
   white-space: nowrap; 
+}
+
+/*====================================================
+    dark mode
+====================================================*/
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #d4d4d4;
+    background-color: #121212;
+  }
+
+  a, a:visited, a:active, a:focus {
+    color: #f0f0f0;
+  }
+
+  a:hover {
+    color: rgb(138, 138, 138);
+  }
+
+  .navbar-light .navbar-brand,
+  .navbar-light .navbar-brand:focus,
+  .navbar-light .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+  hr {
+    border-top-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .footer {
+    border-top-color: #2a2a2a;
+  }
+
+  /* Diagrams with transparent backgrounds have black lines */
+  .post-content img {
+    background-color: #fff;
+  }
+
+  code {
+    color: #c8c8c8;
+    background: #2a2a2a;
+  }
+
+  blockquote {
+    color: #d4d4d4;
+    border-color: #555;
+    background: transparent;
+  }
+
+  table,
+  table th,
+  table td {
+    border-color: #3a3a3a;
+  }
+
+  table th {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  table tbody tr:nth-child(2n) {
+    background: rgba(255, 255, 255, 0.05);
+  }
 }

@@ -11,11 +11,15 @@
     
     <title>Begin Machine Learning | Jangey Lu</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <!-- Pure CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
    <!-- Custom CSS -->
     
 <link rel="stylesheet" href="/css/styles.css">
@@ -87,10 +91,8 @@
 <li>(X, y): features and the target variable.</li>
 <li>(test_size): between 0 and 1 - how much to allocate to the test set; the rest goes to the train set. </li>
 <li>(shuffle): if True, shuffle the dataset, otherwise not.</li>
-<li>(random_state): integer; if None, then results are random, otherwise fixed to a given seed.</li>
+<li>(random_state): integer; if None, then results are random, otherwise fixed to a given seed.<br><br></li>
 </ul>
-<br>
-
 <p>Machine Learning need split for <strong>Train Set</strong> and <strong>Test Set</strong>. We train the model from <strong>Train Set</strong> and use the model for unknowed <strong>Test Set</strong>.</p>
 <hr>
 
@@ -100,13 +102,13 @@
 </ul>
 <p>$$ MSE &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N (y_i - \hat y_i)^2 $$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function mse		- return Mean-Squared Error</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mse</span>(<span class="params">y_predicted, y_true</span>):</span><br><span class="line">    <span class="keyword">return</span> ((y_predicted - y_true)**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
-<br>
+<p><br></p>
 
 <h3 id="RMSE-Root-Mean-Square-Error"><a href="#RMSE-Root-Mean-Square-Error" class="headerlink" title="RMSE - Root Mean Square Error"></a>RMSE - Root Mean Square Error</h3><ul>
 <li>Square root for Mean of the square difference between the predicted value and true value.</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rmse		- return Root Mean-Squared Error</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rmse</span>(<span class="params">y_predicted, y_true</span>):</span><br><span class="line">    <span class="keyword">return</span> np.sqrt(((y_predicted - y_true)**<span class="number">2</span>).mean())</span><br></pre></td></tr></table></figure>
-<br>
+<p><br></p>
 
 <h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
 <li>$ 0 \le R^2 \le 1 $</li>
@@ -138,22 +140,22 @@
       <!-- footer scripts -->
       <footer class="mt-4 py-4 mr-4 footer">
     
-    <a href="https://facebook.lujangey.com" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://facebook.lujangey.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://instagram.lujangey.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://instagram.lujangey.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://github.lujangey.com" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://github.lujangey.com" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="/images/wechatID.JPG" target="_blank"><i class="fa fa-weixin"></i></a>
+    <a href="/images/wechatID.JPG" target="_blank" rel="noopener" aria-label="WeChat" title="WeChat"><i class="fa fa-weixin" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://youtube.lujangey.com" target="_blank"><i class="fa fa-youtube"></i></a>
-    <i class="mr-4"></i>
-    <a href="mailto:lujangey@lujangey.com" target="_blank"><i class="fa fa-envelope"></i></a>
+    <a href="https://youtube.lujangey.com" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
     
 </footer>
 
+
       <!-- After footer scripts -->
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 <script>

@@ -11,11 +11,15 @@
     
     <title>Decision Tree | Jangey Lu</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <!-- Pure CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
    <!-- Custom CSS -->
     
 <link rel="stylesheet" href="/css/styles.css">
@@ -82,7 +86,7 @@
         <!-- Post Main Content -->
         <div class="post-content col-lg-8 offset-lg-2 col-md-10 offset-md-1">
             <h3 id="Decision-Tree-Regression"><a href="#Decision-Tree-Regression" class="headerlink" title="Decision Tree Regression"></a>Decision Tree Regression</h3><p>Using features data from DataFrame to train a regression tree model. The way to find the best split value is to find the best <strong>MSE</strong> in each feature type. When we found the <strong>BEST MSE</strong> value, the model will set it as the split value for current level. Separate the X and y into left subtree and right subtree, and keep going to train the model tree from subtree. </p>
-<p>More Info Using Scikit-Learn Built-in library: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">Scikit-Learn Decision Tree Regression</a></p>
+<p>More Info Using Scikit-Learn Built-in library: <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">Scikit-Learn Decision Tree Regression</a></p>
 <ul>
 <li><p>max_depth: int or None, optional (default&#x3D;None)<br>The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.</p>
 </li>
@@ -97,11 +101,11 @@
 <li><p>score(self, X: pd.DataFrame, y: np.array)<br>Returns the coefficient of determination $R^2$ of the prediction.</p>
 </li>
 </ul>
-<h4 id="Graphic-Example"><a href="#Graphic-Example" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><img src="/Machine-Learning/decision-tree/DecisionTreeRegressor.png"  width="100%">
+<h4 id="Graphic-Example"><a href="#Graphic-Example" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><p><img loading="lazy" src="/Machine-Learning/decision-tree/DecisionTreeRegressor.png"  width="100%"></p>
 
 <p><br><hr></p>
 <h3 id="Decision-Tree-Classification"><a href="#Decision-Tree-Classification" class="headerlink" title="Decision Tree Classification"></a>Decision Tree Classification</h3><p>Using features data from DataFrame to train a regression tree model. The way to find the best split value is to find the best average subtree of <strong>GINI Impurity X Data Weight</strong> in each feature type. When we found the <strong>BEST (GINI Impurity X Data Weight)</strong> value, the model will set it as the split value for current level. Separate the X and y into left subtree and right subtree, and keep going to train the model tree from subtree.</p>
-<p>More Info Using Scikit-Learn Built-in library. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">Scikit-Learn Decision Tree Regression</a> </p>
+<p>More Info Using Scikit-Learn Built-in library. <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">Scikit-Learn Decision Tree Regression</a> </p>
 <ul>
 <li>GINI Impurity:<br>$$ GINI &#x3D;1-\sum_{i&#x3D;1}^{N}{p_{i}}^{2} $$</li>
 </ul>
@@ -126,7 +130,7 @@
 <li><p>score(self, X: pd.DataFrame, y: np.array)<br>Returns the mean accuracy on the given test data and labels.</p>
 </li>
 </ul>
-<h4 id="Graphic-Example-1"><a href="#Graphic-Example-1" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><img src="/Machine-Learning/decision-tree/DecisionTreeClassifier.png"  width="100%">
+<h4 id="Graphic-Example-1"><a href="#Graphic-Example-1" class="headerlink" title="Graphic Example"></a>Graphic Example</h4><p><img loading="lazy" src="/Machine-Learning/decision-tree/DecisionTreeClassifier.png"  width="100%"></p>
 
             <!-- Meta --> 
             <div class="post-date">
@@ -142,22 +146,22 @@
       <!-- footer scripts -->
       <footer class="mt-4 py-4 mr-4 footer">
     
-    <a href="https://facebook.lujangey.com" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://facebook.lujangey.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://instagram.lujangey.com" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://instagram.lujangey.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://github.lujangey.com" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://github.lujangey.com" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="/images/wechatID.JPG" target="_blank"><i class="fa fa-weixin"></i></a>
+    <a href="/images/wechatID.JPG" target="_blank" rel="noopener" aria-label="WeChat" title="WeChat"><i class="fa fa-weixin" aria-hidden="true"></i></a>
     <i class="mr-4"></i>
-    <a href="https://youtube.lujangey.com" target="_blank"><i class="fa fa-youtube"></i></a>
-    <i class="mr-4"></i>
-    <a href="mailto:lujangey@lujangey.com" target="_blank"><i class="fa fa-envelope"></i></a>
+    <a href="https://youtube.lujangey.com" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
     
 </footer>
 
+
       <!-- After footer scripts -->
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 <script>
