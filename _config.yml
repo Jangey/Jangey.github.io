@@ -81,5 +81,5 @@ theme: mytheme
 deploy:
   type: git
   repo: https://github.com/Jangey/Jangey.github.io
-  branch: master
+  branch: main
   message:  
