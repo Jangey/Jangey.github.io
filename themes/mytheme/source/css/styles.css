@@ -54,6 +54,50 @@ a:hover {
 }
 
 /*====================================================
+    vertically centered pages (home, about)
+====================================================*/
+/* Fill the viewport above the 120px reserved for the footer */
+.center-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+}
+
+@media (min-width: 576px) {
+  .center-page {
+    min-height: calc(100vh - 120px - 3rem);
+    margin-bottom: 0 !important;
+  }
+
+  /* Flex children don't collapse margins; keep the header where it was */
+  .center-page > nav {
+    margin-top: 0 !important;
+  }
+}
+
+.center-page > :last-child,
+.center-page > :last-child > .row {
+  flex: 1;
+  display: flex;
+}
+
+.center-page > :last-child,
+.center-page > :last-child > .row > div {
+  flex-direction: column;
+}
+
+.center-page > :last-child > .row > div {
+  display: flex;
+}
+
+.center-page center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*====================================================
     youtube display screen size
 ====================================================*/
 .video-container {
@@ -118,7 +162,7 @@ pre,
   margin: 20px 0;
   padding: 0;
   color: #c5c8c6;
-  font-size: 10px;
+  font-size: 14px;
   background: #1d1f21;
   line-height: 1.4;
 }

@@ -5,7 +5,7 @@
 
   <!-- Body tag -->
   <body>
-      <div class="container-fluid navbar-container m-sm-5">
+      <div class="container-fluid navbar-container m-sm-5<% if (is_home() || page.center) { %> center-page<% } %>">
 
         <!-- Header -->
         <%- partial('_partial/header') %>
