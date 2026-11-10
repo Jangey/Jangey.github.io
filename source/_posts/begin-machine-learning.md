@@ -14,8 +14,7 @@ Output: X_train, X_test, y_train, y_test
 - (X, y): features and the target variable.
 - (test_size): between 0 and 1 - how much to allocate to the test set; the rest goes to the train set. 
 - (shuffle): if True, shuffle the dataset, otherwise not.
-- (random_state): integer; if None, then results are random, otherwise fixed to a given seed. 
-<br>
+- (random_state): integer; if None, then results are random, otherwise fixed to a given seed.<br><br>
 
 Machine Learning need split for **Train Set** and **Test Set**. We train the model from **Train Set** and use the model for unknowed **Test Set**.
 <hr>
@@ -31,7 +30,7 @@ $$ MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat y_i)^2 $$
 def mse(y_predicted, y_true):
     return ((y_predicted - y_true)**2).mean()
 {% endcodeblock %}
-<br>
+<p><br></p>
 
 ### RMSE - Root Mean Square Error
 - Square root for Mean of the square difference between the predicted value and true value.
@@ -41,7 +40,7 @@ def mse(y_predicted, y_true):
 def rmse(y_predicted, y_true):
     return np.sqrt(((y_predicted - y_true)**2).mean())
 {% endcodeblock %}
-<br>
+<p><br></p>
 
 ### RSQ - R Square Score - $ R^2 $
 - $ 0 \le R^2 \le 1 $ 

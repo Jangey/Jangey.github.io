@@ -27,7 +27,7 @@ Predict regression value for X.
 Returns the coefficient of determination $R^2$ of the prediction.
 
 #### Graphic Example 
-<img src="{% asset_path DecisionTreeRegressor.png %}"  width="100%">
+<p><img src="{% asset_path DecisionTreeRegressor.png %}"  width="100%"></p>
 
 <br><hr>
 
@@ -81,4 +81,4 @@ Predict class value for X.
 Returns the mean accuracy on the given test data and labels.
 
 #### Graphic Example 
-<img src="{% asset_path DecisionTreeClassifier.png %}"  width="100%">
+<p><img src="{% asset_path DecisionTreeClassifier.png %}"  width="100%"></p>

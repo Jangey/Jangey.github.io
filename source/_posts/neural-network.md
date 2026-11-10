@@ -8,11 +8,9 @@ date: 2019-04-14 21:06:39
 Artificial Neuron will have X for input and y for output, the output y from all of x value multiply the weight and plus the bias with bias weight. 
 - $x$: x value, $w$: weight, 
 
- $$ y = \sum_{i=1}^N (x_i * w_i) + (bias)(bias_{weight}) $$
+  $$ y = \sum_{i=1}^N (x_i * w_i) + (bias)(bias_{weight}) $$
 
-<center><img src="{% asset_path ArtificialNeuralNetwork.png %}"  width="50%"></center>
-<hr>
-<center><h4>OR</h4></center>
+<center><img src="{% asset_path ArtificialNeuralNetwork.png %}"  width="50%"></center><br><hr><br><center><h4>OR</h4></center>
 
 |  x1 |  x2 |  y  |
 | :-: | :-: | :-: |

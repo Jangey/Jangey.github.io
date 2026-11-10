@@ -30,7 +30,7 @@ Returns the coefficient of determination $R^2$ of the prediction.
 - X-axis: Number of Random Forest estimators
 - y-axis: The accuracy for predict values.
 
-<img src="{% asset_path RandomForestRegressor.png %}"  width="100%">
+<p><img src="{% asset_path RandomForestRegressor.png %}"  width="100%"></p>
 
 {% codeblock lang:python %}
 import pandas as pd
