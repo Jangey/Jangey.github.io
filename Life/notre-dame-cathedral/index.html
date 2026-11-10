@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Head tag -->
-  <head><meta name="generator" content="Hexo 3.9.0">
+  <head>
     <meta charset="utf-8">
     <!-- Mobile Devide view -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    
+<link rel="stylesheet" href="/css/styles.css">
 
- </head>
+
+ <meta name="generator" content="Hexo 8.1.2"></head>
 
   <!-- Body tag -->
   <body>
@@ -85,7 +87,7 @@
 <p>失去的瞬间才领悟到的痛<br>多少人为之惋惜<br>这震撼灵魂的建筑 未曾看过的风景<br>还未曾目睹就已化为灰烬</p>
 <p>庆幸的是教堂前方的主楼建筑未被摧毁<br>而后方的尖塔楼却被大火烧毁<br>看着网络上 塔顶坠落的3秒<br>随着尖塔楼的坠落 多少人的心也跟随着痛了一下</p>
 <p>人生就是一个未知数<br>有想要做的事就去做<br>有想去看的地方就去看<br>毕竟一生也就一辈子那么短</p>
-<center><img src="/Life/notre-dame-cathedral/NotreDameCathedral.jpg" width="50%"></center>
+<center><img src="/Life/notre-dame-cathedral/NotreDameCathedral.jpg"  width="50%"></center>
 
             <!-- Meta --> 
             <div class="post-date">
@@ -119,21 +121,20 @@
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+  </body>
 
 </html>

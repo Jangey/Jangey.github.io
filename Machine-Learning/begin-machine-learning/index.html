@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Head tag -->
-  <head><meta name="generator" content="Hexo 3.9.0">
+  <head>
     <meta charset="utf-8">
     <!-- Mobile Devide view -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    
+<link rel="stylesheet" href="/css/styles.css">
 
- </head>
+
+ <meta name="generator" content="Hexo 8.1.2"></head>
 
   <!-- Body tag -->
   <body>
@@ -85,8 +87,10 @@
 <li>(X, y): features and the target variable.</li>
 <li>(test_size): between 0 and 1 - how much to allocate to the test set; the rest goes to the train set. </li>
 <li>(shuffle): if True, shuffle the dataset, otherwise not.</li>
-<li>(random_state): integer; if None, then results are random, otherwise fixed to a given seed.<br><br></li>
+<li>(random_state): integer; if None, then results are random, otherwise fixed to a given seed.</li>
 </ul>
+<br>
+
 <p>Machine Learning need split for <strong>Train Set</strong> and <strong>Test Set</strong>. We train the model from <strong>Train Set</strong> and use the model for unknowed <strong>Test Set</strong>.</p>
 <hr>
 
@@ -94,27 +98,29 @@
 <h3 id="MSE-Mean-Square-Error"><a href="#MSE-Mean-Square-Error" class="headerlink" title="MSE - Mean Square Error"></a>MSE - Mean Square Error</h3><ul>
 <li>Mean of the square difference between the predicted value and true value.</li>
 </ul>
-<p>$$ MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat y_i)^2 $$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function mse		- return Mean-Squared Error</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mse</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> ((y_predicted - y_true)**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
-<p><br></p>
+<p>$$ MSE &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N (y_i - \hat y_i)^2 $$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function mse		- return Mean-Squared Error</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mse</span>(<span class="params">y_predicted, y_true</span>):</span><br><span class="line">    <span class="keyword">return</span> ((y_predicted - y_true)**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
+<br>
+
 <h3 id="RMSE-Root-Mean-Square-Error"><a href="#RMSE-Root-Mean-Square-Error" class="headerlink" title="RMSE - Root Mean Square Error"></a>RMSE - Root Mean Square Error</h3><ul>
 <li>Square root for Mean of the square difference between the predicted value and true value.</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rmse		- return Root Mean-Squared Error</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rmse</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.sqrt(((y_predicted - y_true)**<span class="number">2</span>).mean())</span><br></pre></td></tr></table></figure>
-<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rmse		- return Root Mean-Squared Error</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rmse</span>(<span class="params">y_predicted, y_true</span>):</span><br><span class="line">    <span class="keyword">return</span> np.sqrt(((y_predicted - y_true)**<span class="number">2</span>).mean())</span><br></pre></td></tr></table></figure>
+<br>
+
 <h3 id="RSQ-R-Square-Score-R-2"><a href="#RSQ-R-Square-Score-R-2" class="headerlink" title="RSQ - R Square Score - $ R^2 $"></a>RSQ - R Square Score - $ R^2 $</h3><ul>
-<li>$ 0 \le R^2 \le 1 $ </li>
+<li>$ 0 \le R^2 \le 1 $</li>
 </ul>
 <p>The goal is to make the $ R^2 $ approaching 1 to train the model perfect.</p>
-<p>$$ R^2 = 1 - { mse \over value } $$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rsq</span><span class="params">(y_predicted, y_true)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
+<p>$$ R^2 &#x3D; 1 - { mse \over value } $$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># function rsq		- return R^2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rsq</span>(<span class="params">y_predicted, y_true</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> - ((y_predicted - y_true)**<span class="number">2</span>).mean() / ((y_true - y_true.mean())**<span class="number">2</span>).mean()</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h3 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h3><p>Overfitting means our model fit the trainning set really well, maybe too well. $R^2$ train set way better than $R^2$ test set.</p>
-<p>e.g. Train Set $R^2 = 0.97$ , Test Set $R^2 = 0.64$.</p>
+<p>e.g. Train Set $R^2 &#x3D; 0.97$ , Test Set $R^2 &#x3D; 0.64$.</p>
 <p>Solution: Reduce the complexity of our model from high frequency model to a lower degree polynomial model.<br><br></p>
 <h3 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h3><p>Underfitting mean low $R^2$ on both train set and test set. $R^2$ train set and $R^2$ test set are low.</p>
-<p>e.g. Train Set $R^2 = 0.64$, Test Set $R^2 = 0.62$.</p>
+<p>e.g. Train Set $R^2 &#x3D; 0.64$, Test Set $R^2 &#x3D; 0.62$.</p>
 <p>Solution: We can try more complex model from low degree polynomial model to a higher degree polynomial model.</p>
 
 
@@ -150,21 +156,20 @@
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+  </body>
 
 </html>
